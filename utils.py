@@ -1,19 +1,6 @@
+from text import animals_id
+
 animals = []
-animals_id = {
-    'слон': 'CgACAgQAAxkBAAPEZn_ADDdRPwenF-kj-jr0H_3E0-wAAtwCAAJ9GwxTaNnqYwZS5q81BA',
-    'волк': 'CgACAgQAAxkBAAPjZn_C5XcW8tEIEBlbezOIrbdb8PkAAsoDAAJ0vr1TBLUgr1mGCdI1BA',
-    'сова': 'CgACAgQAAxkBAAPnZn_DLLiOyFn8KeihmklSL8YZPJUAAkEDAAL4TwRTKIxYiSchRKc1BA',
-    'попугай': 'CgACAgQAAxkBAAIBtmaGM9DsdYQiUzTOehTvFcCz0pOiAAJXAwACcf98U913WFXs7viyNQQ',
-    'тигр': 'CgACAgQAAxkBAAIBt2aGNBf2Igx7dAJvIdlAyjDfx0ggAAKOBAACRFL0UqRfM-L-WeHSNQQ',
-    'альпака': 'CgACAgQAAxkBAAIBuGaGNEmlyZvQvSJT_3zHhf20e5XQAAK4AgAClH1MUx3EbUUB2gVQNQQ',
-    'саламандра': 'CgACAgQAAxkBAAIBuWaGNIuItN6EbX1__aJH96TuEebBAALHBAACsCn8UxU-yEbZ0v6bNQQ',
-    'кот': 'CgACAgQAAxkBAAIBumaGNL3R2vdeeq8VFVo_jjfloUMFAAIdAwACgtUEUwUmdX38GQFGNQQ',
-    'медоед': 'CgACAgQAAxkBAAIBu2aGNOJ9GafCpZyUAXYFw1kOBQINAAL-AgAC21oNU-fAx0THMgkINQQ',
-    'медведь': 'CgACAgQAAxkBAAIBvGaGNPpw0U_H88HmOtbDk6YAAfHAFgACWAMAAsevJFN-_3Yp9IQnfzUE',
-    'лемур': 'CgACAgQAAxkBAAIBvWaGNT-vlCHUF4S1m7rvvvgZ9WqQAAKuAwACSNHEUWzNpIwzIjozNQQ',
-    'капибара': 'CgACAgQAAxkBAAIBvmaGNVHJoiQ-o9uyy1OWbn1P3n0iAAJGBAACQT08UD64C7HJNhoVNQQ'
-}
-link_text = 'https://moscowzoo.ru/about/guardianship'
 
 
 def question_answer_1(answer):

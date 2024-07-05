@@ -14,6 +14,7 @@ from aiogram.fsm.state import State, StatesGroup
 from aiogram import Router, types
 
 from utils import *
+from text import *
 
 router_1 = Router()
 
@@ -200,7 +201,7 @@ async def question_3(message: types.Message, state: FSMContext):
     animal, animal_id = result_animal()
     print(animal)
     await message.answer_animation(animation=animal_id,
-                                   caption=f'Вы {animal}', show_caption_above_media=True)
+                                   caption=animals_text[animal], show_caption_above_media=True)
     await message.answer(
         f'Вы можете взять под опеку своё животное, для получения подробной информации перейдите по ссылке'
         f'\n {link_text}')
