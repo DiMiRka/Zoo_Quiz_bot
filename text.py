@@ -29,3 +29,4 @@ animals_id = {
 }
 
 link_text = 'https://moscowzoo.ru/about/guardianship'
+share_message = 'http://vk.com/share.php?url=https://t.me/dimirka_zoo_bot&title=Я прошел викторину в Московском зоопарке!&comment='

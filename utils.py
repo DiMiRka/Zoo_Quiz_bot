@@ -1,9 +1,12 @@
+import asyncio
 from text import animals_id
 
 animals = []
 
 
-def question_answer_1(answer):
+async def question_answer_1(answer):
+    global animals
+    animals = []
     if answer == 'Индия':
         return animals.append('слон')
     if answer == 'Вьетнам':
@@ -16,7 +19,7 @@ def question_answer_1(answer):
         return animals.extend(['волк', 'медведь'])
 
 
-def question_answer_2(answer):
+async def question_answer_2(answer):
     if answer == 'Светлый лес':
         return animals.extend(['лемур', 'медоед', 'саламандра'])
     if answer == 'Горы в гималаях':
@@ -27,7 +30,7 @@ def question_answer_2(answer):
         return animals.extend(['волк', 'тигр'])
 
 
-def question_answer_3(answer):
+async def question_answer_3(answer):
     if answer == 'Мощь и сила':
         return animals.extend(['слон', 'волк', 'медведь'])
     if answer == 'Миролюбивость':
@@ -40,7 +43,7 @@ def question_answer_3(answer):
         return animals.append('тигр')
 
 
-def question_answer_4(answer):
+async def question_answer_4(answer):
     if answer == 'Фрукты':
         return animals.extend(['слон', 'капибара'])
     if answer == 'Орехи':
@@ -51,14 +54,14 @@ def question_answer_4(answer):
         return animals.extend(['кот', 'тигр', 'волк', 'медоед'])
 
 
-def question_answer_5(answer):
+async def question_answer_5(answer):
     if answer == 'В коллективе, люблю общение':
         return animals.extend(['слон', 'капибара', 'лемур'])
     if answer == 'В одиночестве, предпочитаю оставаться наедине со своими мыслями':
         return animals.extend(['кот', 'тигр', 'медоед', 'саламандра'])
 
 
-def question_answer_6(answer):
+async def question_answer_6(answer):
     if answer == 'В холоде со снежком':
         return animals.extend(['попугай', 'тигр'])
     if answer == 'В тепле мне куда лучше':
@@ -67,7 +70,7 @@ def question_answer_6(answer):
         return animals.extend(['волк', 'сова'])
 
 
-def question_answer_7(answer):
+async def question_answer_7(answer):
     if answer == 'Белый':
         return animals.extend(['альпака', 'медведь'])
     if answer == 'Серый':
@@ -78,14 +81,14 @@ def question_answer_7(answer):
         return animals.extend(['кот', 'тигр', 'саламандра'])
 
 
-def question_answer_8(answer):
+async def question_answer_8(answer):
     if answer == 'Искусный рыболов это про меня':
         return animals.extend(['медведь', 'тигр'])
     if answer == 'Рыбалка не моё':
         return animals.extend(['сова', 'альпака', 'попугай'])
 
 
-def question_answer_9(answer):
+async def question_answer_9(answer):
     if answer == 'Люблю вставать пораньше, чтобы побольше успеть':
         return animals.append('лемур')
     if answer == 'По душе поспать, а потом всю ночь бодрствовать':
@@ -94,7 +97,7 @@ def question_answer_9(answer):
         return animals.extend(['медведь', 'волк'])
 
 
-def question_answer_10(answer):
+async def question_answer_10(answer):
     if answer == 'Люблю поваляться, чем меньше дел тем лучше':
         return animals.extend(['слон', 'медведь', 'сова'])
     if answer == 'Стараюсь не сидеть на месте, хочу везде и сразу':
@@ -102,13 +105,10 @@ def question_answer_10(answer):
 
 
 def result_animal():
-    global animals
-    print(animals)
     n = 0
     animal = ''
     for i in (tuple(animals)):
         if animals.count(i) > n:
             animal = i
     animal_id = animals_id[animal]
-    animals = []
     return animal, animal_id
