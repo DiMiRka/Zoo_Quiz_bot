@@ -16,9 +16,10 @@ from aiogram.utils.formatting import (
 
 from token_data import TOKEN
 from quiz_handler import router_1
+from zoo_handler import router_2
 
 dp = Dispatcher(storage=MemoryStorage())
-dp.include_router(router_1)
+dp.include_routers(router_1, router_2)
 
 
 @dp.message(CommandStart())
@@ -31,9 +32,9 @@ async def command_start_handler(message: Message) -> None:
                          reply_markup=keyboard)
 
 
-@dp.message(F.animation)
+@dp.message(F.text == 'id')
 async def id_send(message: Message):
-    print(message.animation.file_id)
+    await message.answer(f'Твой id: {message.from_user.id}')
 
 
 async def main() -> None:
@@ -44,4 +45,5 @@ async def main() -> None:
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+    logging.basicConfig(level=logging.DEBUG)
     asyncio.run(main())

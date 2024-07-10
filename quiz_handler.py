@@ -81,14 +81,14 @@ async def question_6(message: types.Message, state: FSMContext):
 async def question_7(message: types.Message, state: FSMContext):
     await question_answer_6(message.text)
     await message.answer('Какой цвет тебе нравится больше?', reply_markup=question_kb_7.as_markup())
+    await state.set_state(Quiz.waiting_question_7.state)
+
+
+@router_1.message(Quiz.waiting_question_7)
+async def question_8(message: types.Message, state: FSMContext):
+    await question_answer_7(message.text)
+    await message.answer('Как ты относишься к рыбалке?', reply_markup=question_kb_8.as_markup())
     await state.set_state(Quiz.waiting_question_8.state)
-
-
-#@router_1.message(Quiz.waiting_question_7)
-#async def question_8(message: types.Message, state: FSMContext):
-#    await state.set_data({'Animals': question_answer_7(message.text)})
-#    await message.answer('Как ты относишься к рыбалке?', reply_markup=question_kb_8.as_markup())
-#    await state.set_state(Quiz.waiting_question_8.state)
 
 
 @router_1.message(Quiz.waiting_question_8)
@@ -116,11 +116,9 @@ async def result(message: types.Message, state: FSMContext):
         f'Вы можете взять под опеку своё животное, для получения подробной информации перейдите по ссылке'
         f'\n {link_text}', reply_markup=await make_menu(share_text=text_share))
     await state.set_data({'share': text_share})
-    # await message.answer(reply_markup=menu)
 
 
 @router_1.callback_query(F.data == 'начать викторину заново')
 async def new_quiz(callback: types.CallbackQuery, state: FSMContext):
     await callback.message.answer('В какой стране ты хотел(а) бы побывать?', reply_markup=question_kb_1.as_markup())
     await state.set_state(Quiz.waiting_question_1.state)
-

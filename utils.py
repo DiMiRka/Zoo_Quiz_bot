@@ -1,5 +1,4 @@
-import asyncio
-from text import animals_id
+from text import animals_id, animals_text
 
 animals = []
 
@@ -58,12 +57,12 @@ async def question_answer_5(answer):
     if answer == 'В коллективе, люблю общение':
         return animals.extend(['слон', 'капибара', 'лемур'])
     if answer == 'В одиночестве, предпочитаю оставаться наедине со своими мыслями':
-        return animals.extend(['кот', 'тигр', 'медоед', 'саламандра'])
+        return animals.extend(['кот', 'медоед', 'саламандра'])
 
 
 async def question_answer_6(answer):
     if answer == 'В холоде со снежком':
-        return animals.extend(['попугай', 'тигр'])
+        return animals.append('попугай')
     if answer == 'В тепле мне куда лучше':
         return animals.extend(['кот', 'саламандра', 'капибара'])
     if answer == 'Не имеет значения, везде хорошо':
@@ -72,7 +71,7 @@ async def question_answer_6(answer):
 
 async def question_answer_7(answer):
     if answer == 'Белый':
-        return animals.extend(['альпака', 'медведь'])
+        return animals.append('медведь')
     if answer == 'Серый':
         return animals.extend(['слон', 'капибара', 'лемур', 'медоед'])
     if answer == 'Зеленый':
@@ -99,16 +98,21 @@ async def question_answer_9(answer):
 
 async def question_answer_10(answer):
     if answer == 'Люблю поваляться, чем меньше дел тем лучше':
-        return animals.extend(['слон', 'медведь', 'сова'])
+        return animals.extend(['медведь', 'сова'])
     if answer == 'Стараюсь не сидеть на месте, хочу везде и сразу':
         return animals.extend(['лемур', 'медоед'])
 
 
 def result_animal():
     n = 0
-    animal = ''
+    animal_result = ''
     for i in (tuple(animals)):
         if animals.count(i) > n:
-            animal = i
-    animal_id = animals_id[animal]
-    return animal, animal_id
+            animal_result = i
+            n = animals.count(i)
+    animal_result_id = animals_id[animal_result]
+    return animal_result, animal_result_id
+
+
+#animal, animal_id = result_animal()
+#text_share = animals_text[animal]
