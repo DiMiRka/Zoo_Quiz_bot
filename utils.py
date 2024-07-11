@@ -1,4 +1,4 @@
-from text import animals_id, animals_text
+from text import animals_id
 
 animals = []
 
@@ -112,7 +112,3 @@ def result_animal():
             n = animals.count(i)
     animal_result_id = animals_id[animal_result]
     return animal_result, animal_result_id
-
-
-#animal, animal_id = result_animal()
-#text_share = animals_text[animal]

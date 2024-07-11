@@ -1,5 +1,4 @@
 from aiogram import F
-from aiogram.types import ReplyKeyboardRemove
 from aiogram.fsm.context import FSMContext
 from aiogram import Router, types
 from aiogram.fsm.state import State, StatesGroup
@@ -20,10 +19,11 @@ class Zoo(StatesGroup):
 async def call(callback: types.CallbackQuery, state: FSMContext):
     animal, animal_id = result_animal()
     text_share = animals_text[animal]
+    user_name = callback.from_user.username
     await callback.message.answer(f'Связаться с нашим сотрудником, Дмитрием: \n\n'
                                   f'telegram: https://t.me/dimirka_94\n'
                                   f'E-mail: fallen_94@bk.ru\n'
-                                  f'Phone: 8-914-541-23-19', reply_markup=await make_call(text_share))
+                                  f'Phone: 8-914-541-23-19', reply_markup=await make_call(text_share, user_name))
     await state.set_state(Zoo.text_to_stuff)
     await callback.answer()
 

@@ -1,19 +1,8 @@
-import aiohttp
-import asyncio
-
-from datetime import datetime
-import webbrowser
-
-from aiogram.filters import Command, CommandObject
-from aiogram.types import Message
 from aiogram import F
 from aiogram.types import ReplyKeyboardRemove
-from aiogram.utils.formatting import (
-    Bold, as_list, as_marked_section
-)
 from aiogram.fsm.context import FSMContext
+from aiogram import Router
 from aiogram.fsm.state import State, StatesGroup
-from aiogram import Router, types
 
 from utils import *
 from text import *

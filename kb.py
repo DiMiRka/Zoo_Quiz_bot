@@ -1,11 +1,8 @@
 from aiogram import types
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup
+from aiogram.types import InlineKeyboardMarkup, ReplyKeyboardMarkup
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 from text import share_message
-from text import animals_text
-from aiogram.fsm.state import State, StatesGroup
 
-from utils import result_animal
 
 kb_1 = [
     [types.KeyboardButton(text='Индия'),
@@ -103,7 +100,7 @@ async def make_menu(share_text):
     return menu
 
 
-async def make_call(text_share):
-    kb_call = [[types.KeyboardButton(text=f'Чат с сотрудником \n Результат викторины:\n {text_share}')]]
+async def make_call(text_share, user_name):
+    kb_call = [[types.KeyboardButton(text=f'{user_name}: Чат с сотрудником \n Результат викторины:\n {text_share}')]]
     call_kb = ReplyKeyboardMarkup(keyboard=kb_call, resize_keyboard=True)
     return call_kb
